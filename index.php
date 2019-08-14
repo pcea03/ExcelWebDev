@@ -9,29 +9,33 @@
         h1 {
             color: red;
             font-size: 50px;
-            font-family: 'Roman',sans-serif;
+            font-family: 'Jokerman',sans-serif;
             text-align: center;
             text-transform: uppercase;
         }
     </style>
+
 </head>
 <body>
     <h1>This is a heading</h1>
     <h2 id = "header2">This is also a heading</h2>
-    <p id = "par">This is a paragraph</p>
+    <p id = "par" style="color:blue">This is a paragraph</p>
     <a href = "https://www.facebook.com">Link to Facebook</a>
-    
-    <script>
+    <form action="">
+    <input type="button" id="1" value="ON" style="color:blue"
+       onclick="toggle();">
+    </form>
+</body>
+<script type="text/javascript">
         document.getElementById("header2").innerHTML = "Hello World!";
         document.getElementById("par").style.fontSize = "50px";
-        document.getElementById("par").style.color = "blue";
-        
-        if(document.getElementById("par").value=="OFF"){
-        document.getElementById("1").value="ON";}
 
-        else if(document.getElementById("1").value=="ON"){
-        document.getElementById("1").value="OFF";}
+       function toggle()
+        {
+        if(document.getElementById("par").style.color = "blue"){
+        document.getElementById("par").style.color = "red";}
 
+        else {document.getElementById("par").style.color = "blue";}
+        }
     </script>
-</body>
 </html>
