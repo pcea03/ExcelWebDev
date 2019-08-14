@@ -6,36 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        h1 {
-            color: red;
-            font-size: 50px;
-            font-family: 'Jokerman',sans-serif;
-            text-align: center;
-            text-transform: uppercase;
-        }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
     </style>
 
 </head>
 <body>
-    <h1>This is a heading</h1>
-    <h2 id = "header2">This is also a heading</h2>
-    <p id = "par" style="color:blue">This is a paragraph</p>
-    <a href = "https://www.facebook.com">Link to Facebook</a>
-    <form action="">
-    <input type="button" id="1" value="ON" style="color:blue"
-       onclick="toggle();">
-    </form>
+<ul>
+  <li><a href="default.asp">Home</a></li>
+  <li><a href="news.asp">News</a></li>
+  <li><a href="contact.asp">Contact</a></li>
+  <li><a href="about.asp">About</a></li>
+</ul>
 </body>
-<script type="text/javascript">
-        document.getElementById("header2").innerHTML = "Hello World!";
-        document.getElementById("par").style.fontSize = "50px";
-
-       function toggle()
-        {
-        if(document.getElementById("par").style.color = "blue"){
-        document.getElementById("par").style.color = "red";}
-
-        else {document.getElementById("par").style.color = "blue";}
-        }
-    </script>
 </html>
