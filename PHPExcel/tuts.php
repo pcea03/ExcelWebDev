@@ -39,13 +39,17 @@ echo sum(5,6);
 
 //exercies
 
-    $allno = array(1,2,3,4);
-    $hold = count($allno);
-print_r($allno);
-    for($i=0;$i<$hold;$i++){
-            $allno[$i] = $allno[$hold--];
-    }
-    print_r($allno);
+ 
+
+$reverseArray = array(1, 2, 3, 4);
+$tmpArray = array();
+$arraySize = sizeof($reverseArray);
+
+for($i=$arraySize-1; $i>=0; $i--){
+    echo $reverseArray[$i];
+}
+
+
      ?>
 </body>
 </html>
