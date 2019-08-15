@@ -8,25 +8,28 @@
 </head>
 <body>
 
-<form>  
+<form action="" method="POST">  
 Enter First Number:  
-<input type="input" name="number1" /><br><br>  
+<input type="input" name="number1"/><br><br>  
 Enter Second Number:  
 <input type="input" name="number2" /><br><br>  
-<input  type="submit" name="submit" value="Add">  
+<input  type="submit" name="submit2" value="Add">  
 </form>  
  </body>  
 <?php      
-$number1=$_GET['number1'];   
-$number2=$_GET['number2'];   
-$sum = $number1 + $number2;
-echo "Sum of $number1 and $number2 is = ".$sum;  
-//end input number and sum
-echo "<br>------<br>";
+if (isset($_POST['submit2'])) {
+    $number1=$_POST['number1'];   
+    $number2=$_POST['number2'];   
+    $sum = $number1 + $number2;
+    echo "Sum of $number1 and $number2 is = ".$sum;  
+    //end input number and sum
+}
+
+echo "<br>------------------------------------------------";
 
 
     //nested loops, multidimensional array
-    echo "Multidimension Array <br>";
+    echo "<h2>Multidimension Array</h2>";
 
   $cars = array(array('Honda',2019, 10),
                 array('Toyota',2018, 5),
@@ -42,9 +45,9 @@ echo "<br>------<br>";
                         echo '<br>';
                     }
 //functions
-echo "------<br>";
+echo "------------------------------------------------";
 
-echo "Functions <br>";
+echo "<h2>Functions</h2>";
 function simpleFunction($name)
 {
     echo $name;
@@ -57,12 +60,12 @@ function sum($num1,$num2){
     return $sum;
 }
 echo sum(5,6);
-echo "<br>------<br>";
+echo "<br>------------------------------------------------";
 //end function
 
 //exercies reverse array
  
-echo "Reverse Array using loop<br>";
+echo "<h2>Reverse Array using loop</h2>";
 
 $reverseArray = array(1, 2, 3, 4);
 print_r($reverseArray);
@@ -81,10 +84,10 @@ for($i=$arraySize; $i>-1; $i--)
 print_r($reverseArray);
 //end reverse array exercise
 
-echo "<br>----<br>";
+echo "<br>----------------------------------------------------";
 
 // arithmetic operators
-echo "Arithmetic operators <br>";
+echo "<h2>Arithmetic operators</h2>";
 
 $x = 100;
 $y = 80;
@@ -93,26 +96,25 @@ echo "Substraction: ".($x-$y)."<br>";
 echo "Division: ".$x/$y."<br>";
 echo "Modulo: ".$x%$y."<br>";
 
-echo "<br>------<br>";
 $x=2;
 $y=5;
 
 var_dump($x && $y);
 var_dump($x>=$y);
 //end arithmetic operators
-echo "<br>------<br>";
+echo "<br>------------------------------------------------";
 
 //another way to concatenate
-echo "Another way to concatenate <br>";
+echo "<h2>Another way to concatenate</h2>";
 
 $txt1 = "Hello";
 $txt2 = "World";
 $txt1.=$txt2;
 echo $txt1;
 //end 
-echo "<br>------<br>";
+echo "<br>------------------------------------------------";
 //if else
-echo "If Else <br>";
+echo "<h2>If Else </h2>";
 
 $age = 3;
 $message = "";
@@ -135,10 +137,10 @@ if($age<=3){
 echo $message = $text;
 //end if else
 
-echo "<br>------<br>";
+echo "<br>------------------------------------------------";
 
 //switch case
-echo "Switch Case <br>";
+echo "<h2>Switch Case</h2>";
 $favcolor = "red";
 
 switch ($favcolor) {
@@ -155,7 +157,72 @@ switch ($favcolor) {
         echo "Your favorite color is neither red, blue, nor green!";
 }
 //end switch case
+
+echo "<br>------------------------------------------------";
+echo "<h2>Count Strings in Array</h2>";
+$values = array(true,false,null,'abc',123,'123',0,'',1.0,';');
+$arraysize = sizeof($values);
+$holder=0;
+var_dump($values);
+echo "<br>";
+for($i=0;$i<$arraysize;$i++){
+    if(is_string($values[$i])){
+        echo $values[$i].",";
+        $holder++;
+    }
+}
+echo "<br>";
+
+echo "total strings : ".$holder;
+echo "<br>------------------------------------------";
+
+//ternary
+echo "<h2>Ternary</h2>";
+
+$loggedIn = true;
+
+//traditional if else
+if ($loggedIn) {
+    echo "You are Logged in";
+}else {
+    echo "Unable to log in";
+}
+echo "<br>";
+
+echo $loggedIn = ($loggedIn) ?  'Logged In' :  'Logged Out' ;
 ?>
+<form action="" method="POST">  
+Enter grade:  
+<input type="input" name="grade" /><br><br>  
+<input  type="submit" name="submit" value="Add">  
+</form>  
+
+<?php
+
+if (isset($_POST['submit'])) {
+
+    $grade=$_POST['grade'];   
+
+$age = 11;
+$score = 97;
+echo "<br>";
+echo ($grade > 10 ? ($age > 10 ? 'Exceptional' : 'Good'):
+                    ($age > 10 ? 'Average' : 'Horrible')
+        );
+echo "<br>";
+$score =23;
+
+echo '<h3 style="color: #1565c0 font: Jokerman">Your score is: </h3>'.$grade.'<h2 style = "color: #8bc34a
+">'.($grade >= 96 ? 'Excelent' 
+    : ($grade >= 91 ? 'Very Good' 
+    : ($grade >= 85 ? 'Satisfactory'
+    : ($grade >= 75 ? 'Good'
+    : ($grade <= 74 ? 'Failed': ''))))).'</h2>';
+}
+
+?>
+
+
 
 
 </body>
