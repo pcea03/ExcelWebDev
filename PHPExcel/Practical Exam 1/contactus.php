@@ -2,9 +2,14 @@
 <html>
 <head>
 	<title>Contact Us</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="author" content="Psalter Cea">
+    <style>
+    body {
+        background-color: #ffe082;
+    }    </style>
 </head>
-<body style="background-color: #0000">
+<body>
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
