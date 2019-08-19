@@ -24,29 +24,29 @@
 <br>
 <div class="container col-lg-3">
 <div class="card text-center">
-    <div class="card-header text-center bg-info">
+    <div class="card-header text-center bg-secondary">
         <h3>Learners Information</h3>
     </div>
         <div class="card-body">
                     <div class="form-group">
                         <label>First Name</label><br>
-                        <h3><span class="badge badge-info col"> <?php echo $fname ?></span></h3>
+                        <h3><span class="badge badge-dark col"> <?php echo $fname ?></span></h3>
         </div>
                     <div class="form-group">
                         <label>Last Name</label><br>
-                        <h3><span class="badge badge-info col"> <?php echo $lname ?></span></h3>
+                        <h3><span class="badge badge-dark col"> <?php echo $lname ?></span></h3>
         </div>
                     <div class="form-group">
                         <label>Birthday</label><br>
-                        <h3><span class="badge badge-info col"> <?php echo $bday ?></span></h3>
+                        <h3><span class="badge badge-dark col"> <?php echo $bday ?></span></h3>
         </div>
                     <div class="form-group">
                         <label>Address</label><br>
-                        <h3><span class="badge badge-info col"> <?php echo $address ?></span></h3>
+                        <h3><span class="badge badge-dark col"> <?php echo $address ?></span></h3>
         </div>
                     <div class="form-group">
                         <label>Contact No.</label><br>
-                        <h3><span class="badge badge-info col"> <?php echo $contact ?></span></h3>
+                        <h3><span class="badge badge-dark col"> <?php echo $contact ?></span></h3>
         </div>
 </div>
 </div>
