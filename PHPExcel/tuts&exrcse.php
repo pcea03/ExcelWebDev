@@ -67,7 +67,7 @@ echo "<br>------------------------------------------------";
  
 echo "<h2>Reverse Array using loop</h2>";
 
-$reverseArray = array(1, 2, 3, 4);
+$reverseArray = array(1, 2, 3, 4,5,6);
 print_r($reverseArray);
 $tmpArray = array();
 
@@ -81,7 +81,7 @@ for($i=$arraySize; $i>-1; $i--)
     $inc++;
 }
     $reverseArray = $tmpArray;
-print_r($reverseArray);
+print_r($tmpArray);
 //end reverse array exercise
 
 echo "<br>----------------------------------------------------";
@@ -212,7 +212,7 @@ echo ($grade > 10 ? ($age > 10 ? 'Exceptional' : 'Good'):
 echo "<br>";
 $score =23;
 
-echo '<h3 style="color: #1565c0 font: Jokerman">Your score is: </h3>'.$grade.'<h2 style = "color: #8bc34a
+echo '<h3 style="color: #1565c0">Your score is: </h3>'.$grade.'<h2 style = "color: #8bc34a
 ">'.($grade >= 96 ? 'Excelent' 
     : ($grade >= 91 ? 'Very Good' 
     : ($grade >= 85 ? 'Satisfactory'

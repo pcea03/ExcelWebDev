@@ -18,8 +18,7 @@
     color: #ffa000;
 }
     body {
-        background-color: #ffe082
-;
+        background-color: #ffe082;
     }
     </style>
 </head>
