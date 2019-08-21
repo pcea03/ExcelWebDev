@@ -73,7 +73,7 @@ $tmpArray = array();
 
  $arraySize = sizeof($reverseArray)-1;
 
-echo "<br>";
+echo "<br>sdfdsfsdfdf";
 $inc = 1;
 for($i=$arraySize; $i>-1; $i--)
 {
