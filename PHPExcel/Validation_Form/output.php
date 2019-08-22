@@ -31,7 +31,7 @@
     
 <div class="container text-center col-lg-4">
   <div class="card ">
-  <h2 class="bg-dark float-right mp-4 font-weight-bold" style="color: #81d4fa;font-family: Audiowide; padding: 25px; padding-bottom: 10px;"><img src="excelicon.png" alt="excel icon" class="float-left" width="100">PHP Form Validation Output</h2>       
+  <h2 class="bg-dark float-right font-weight-bold" style="color: #81d4fa;font-family: Audiowide; padding: 25px 0px 25px 20px;"><img src="excelicon.png" alt="excel icon" class="float-left" width="100" >PHP Form Validation Example Output</h2>      
     <div class="card-body">
       <div class="container" >
         <blockquote class="blockquite mb-0">
@@ -39,27 +39,27 @@
         </blockquote>
         <div class="form-group">
             <label>Name</label><br>
-            <h3><span class="badge badge-dark col"> <?php echo $_SESSION['name'];?></span></h3>
+            <h3><span class="badge col" style="background-color: #FBB044;"> <?php echo $_SESSION['name'];?></span></h3>
         </div>
 
         <div class="form-group">
             <label>Email</label><br>
-            <h3><span class="badge badge-dark col"> <?php echo $_SESSION['email'];?></span></h3>
+            <h3><span class="badge col" style="background-color: #FBB044;"> <?php echo $_SESSION['email'];?></span></h3>
         </div>
 
         <div class="form-group">
             <label>User Name</label><br>
-            <h3><span class="badge badge-dark col"> <?php echo $_SESSION['userName'];?></span></h3>
+            <h3><span class="badge col" style="background-color: #FBB044;"> <?php echo $_SESSION['userName'];?></span></h3>
         </div>
 
         <div class="form-group">
             <label>Message</label><br>
-            <h3><span class="badge badge-dark col"> <?php echo $_SESSION['message'];?></span></h3>
+            <h3><span class="badge col" style="background-color: #FBB044;"> <?php echo $_SESSION['message'];?></span></h3>
         </div>
 
         <div class="form-group">
             <label>Gender</label><br>
-            <h3><span class="badge badge-dark col"> <?php echo $_SESSION['gender'];?></span></h3>
+            <h3><span class="badge col" style="background-color: #FBB044;"> <?php echo $_SESSION['gender'];?></span></h3>
         </div>
             
             <a href="index.php"><button class="float-right"><img  src="back.png" alt="go back" width="25"></button></a>

@@ -97,7 +97,7 @@ function test_input($data) {
 
 <div class="container text-center col-lg-4">
   <div class="card">
-    <h2 class="bg-dark float-right mp-4 font-weight-bold" style="color: #81d4fa;font-family: Audiowide; padding: 25px; padding-bottom: 10px;"><img src="excelicon.png" alt="excel icon" class="float-left" width="100">PHP Form Validation Example</h2>    
+    <h2 class="bg-dark float-right font-weight-bold" style="color: #81d4fa;font-family: Audiowide; padding: 25px 0px 25px 20px;"><img src="excelicon.png" alt="excel icon" class="float-left" width="100" >PHP Form Validation Example</h2>    
     <div class="card-body text-warning">
       <div class="container">
         <blockquote class="blockquite mb-0">
