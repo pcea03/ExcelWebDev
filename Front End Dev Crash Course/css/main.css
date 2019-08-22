@@ -204,6 +204,23 @@ nav ul li a {
     display: block;
     width: 100%;
     padding: 1em 2em;
-    background-color: rgb(52,59,63);
+    background-color: rgb(20, 25, 29);
 }
 
+nav ul li a:hover{
+    background-color: rgb(76, 91, 100);
+}
+
+.exit-btn {
+    margin-bottom: 1em;
+    margin-top: -1.3em;
+    text-align: right;
+    padding: 0 1.4em;
+}
+
+.exit-btn img {
+    width: 15px;
+    cursor: pointer; 
+}
+
+@media only screen and (min-width:)
