@@ -223,4 +223,90 @@ nav ul li a:hover{
     cursor: pointer; 
 }
 
-@media only screen and (min-width:)
+@media only screen and (min-width: 650px){
+
+    .server{
+        width: 50%;
+    }
+
+    h1 {
+        font-size:  3em;
+        margin: 0;
+    }
+
+    .subhead {
+        font-size: 1.4em;
+        margin-bottom: 12%; 
+    }
+    .blue-container {
+        margin: 0;
+    } 
+
+    .blue-container img {
+        width: 20%;
+    }
+    .blue-container ul li:nth-child(3) img {
+        width: 11%;
+        margin-top: -6px;
+    }
+
+    .blue-container ul {
+        display: flex;
+        margin-top: -1em;
+        align-items: center;
+    }
+
+    .blue-container ul li {
+        margin-bottom: 0;
+
+    }
+    
+    .blue-container ul li p {
+        padding: 0 .8em;
+    }
+
+    .gray-container ul{
+        display: flex;
+    }
+
+    nav ul {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 875px){
+     .subhead {
+         margin-bottom: 15%;
+     }
+
+     .blue-container ul {
+         margin: 0 0 4% 0;
+     }
+
+     .gray-container ul {
+         margin:  4% 0 0;
+     }
+}
+
+@media only screen and (min-width: 1024px){
+
+    .cta {
+        width: 50%;
+    }
+
+    .container {
+        width: 88%;
+        margin: 0 auto;
+    }
+
+    .show-desktop{
+        display: block;
+        margin: 0 auto 13% auto;
+    }
+
+    .hide-desktop{
+        display: none;
+    }
+
+    
+}
