@@ -14,15 +14,18 @@ if(isset($_POST['login'])){
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     
     $count = mysqli_num_rows($result);
-    
+    $hold = mysqli_fetch_object($result);
     // If result matched $myusername and $mypassword, table row must be 1 row
   
     if($count == 1) {
-       $_SESSION['login_user'] = $myusername;
        
-       header("location: index.php");
+       header("location: post.php");
     }else {
-       $error = "Your Login Name or Password is invalid";
+      ?>
+      <script>
+alert("Your Login Name or Password is invalid");
+      </script>
+      <?php
     }
  }
 

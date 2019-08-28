@@ -44,7 +44,7 @@ if(isset($_POST['deleteid'])){
             <small> Created On <?php echo $users['date']; ?></small>
             <br>
             <a href="edit.php?id=<?php echo $users['id']; ?>" class="btn btn-info">Edit</a>
-            <a href="index.php" class="btn btn-success">Logout</a>
+            <a href="login.php" class="btn btn-success">Logout</a>
 
             <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="">
 
