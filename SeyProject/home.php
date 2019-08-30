@@ -1,3 +1,13 @@
+<?php
+  session_start();
+
+
+  $stdFname = $_SESSION['stdFname'];
+  $stdLname = $_SESSION['stdLname'];
+  $stdEmail = $_SESSION['stdEmail'];
+?>
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -29,9 +39,10 @@
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">pro sidebar</a>
+        <a href="#"> Welcome, <br><?php echo $stdFname; ?></a>
+
         <div id="close-sidebar">
-          <i class="fas fa-times"></i>
+          <i class="fas fa-bars"></i>
         </div>
       </div>
 
@@ -75,28 +86,28 @@
       <!-- sidebar-menu  -->
     </div>
     <!-- sidebar-content  -->
-    <div class="sidebar-footer">
-      <a href="#">
-        <i class="fa fa-bell"></i>
-        <span class="badge badge-pill badge-warning notification">3</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-envelope"></i>
-        <span class="badge badge-pill badge-success notification">7</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-cog"></i>
-        <span class="badge-sonar"></span>
-      </a>
-      <a href="#">
-        <i class="fa fa-power-off"></i>
-      </a>
-    </div>
+        <div class="sidebar-footer">
+          <a href="#">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-pill badge-warning notification">3</span>
+          </a>
+          <a href="#">
+            <i class="fa fa-envelope"></i>
+            <span class="badge badge-pill badge-success notification">7</span>
+          </a>
+          <a href="#">
+            <i class="fa fa-cog"></i>
+            <span class="badge-sonar"></span>
+          </a>
+          <a href="#">
+            <i class="fa fa-power-off"></i>
+          </a>
+        </div>
   </nav>
   <!-- sidebar-wrapper  -->
   <main class="page-content">
     <div class="container-fluid">
-      <h2>Pro Sidebar</h2>
+      <h2>Excel Technical Skills and Training Center</h2>
       <hr>
       <div class="row">
         <div class="form-group col-md-12">
@@ -108,7 +119,18 @@
       <h5>More templates</h5>
       <hr>
           <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">         
+                <div class="card rounded-0 p-0 shadow-sm">
+                  <img src="https://user-images.githubusercontent.com/25878302/58369568-a49b2480-7efc-11e9-9ca9-2be44afacda1.png" class="card-img-top rounded-0" alt="Angular pro sidebar">
+                  <div class="card-body text-center">
+                      <h6 class="card-title">Angular Pro Sidebar</h6>
+                      <a href="https://github.com/azouaoui-med/angular-pro-sidebar" target="_blank" class="btn btn-primary btn-sm">Github</a>
+                      <a href="https://azouaoui-med.github.io/angular-pro-sidebar/demo/" target="_blank" class="btn btn-success btn-sm">Preview</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">         
                 <div class="card rounded-0 p-0 shadow-sm">
                   <img src="https://user-images.githubusercontent.com/25878302/58369568-a49b2480-7efc-11e9-9ca9-2be44afacda1.png" class="card-img-top rounded-0" alt="Angular pro sidebar">
                   <div class="card-body text-center">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2019 at 10:15 AM
+-- Generation Time: Aug 30, 2019 at 10:22 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -71,9 +71,10 @@ INSERT INTO `question_tbl` (`evalID`, `questno`, `question`) VALUES
 
 CREATE TABLE `student_tbl` (
   `stdid` int(11) NOT NULL,
-  `stdFName` varchar(255) NOT NULL,
+  `stdFname` varchar(255) NOT NULL,
   `stdLname` varchar(255) NOT NULL,
   `stdEmail` varchar(255) NOT NULL,
+  `stdPass` varchar(255) NOT NULL,
   `stdAdd` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -81,11 +82,11 @@ CREATE TABLE `student_tbl` (
 -- Dumping data for table `student_tbl`
 --
 
-INSERT INTO `student_tbl` (`stdid`, `stdFName`, `stdLname`, `stdEmail`, `stdAdd`) VALUES
-(1, 'Psalter Angelo', 'Cea', 'psaltercea@gmail.com', 'Pasig City'),
-(2, 'Neil', 'Chan', 'nchan@gmail.com', 'Paraniaque'),
-(3, 'Jan Maurice', 'Mateo', 'jmmateo@gmail.com', 'Marikina'),
-(4, 'Jomer', 'Carlo', 'jcarlo@gmail.com', 'Cainta');
+INSERT INTO `student_tbl` (`stdid`, `stdFname`, `stdLname`, `stdEmail`, `stdPass`, `stdAdd`) VALUES
+(1, 'Psalter Angelo', 'Cea', 'psaltercea@gmail.com', '123', 'Pasig City'),
+(2, 'Neil', 'Chan', 'nchan@gmail.com', '1234', 'Paraniaque'),
+(3, 'Jan Maurice', 'Mateo', 'jmmateo@gmail.com', '12345', 'Marikina'),
+(4, 'Jomer', 'Carlo', 'jcarlo@gmail.com', '123456', 'Cainta');
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,7 @@ ALTER TABLE `evaluate_tbl`
 -- AUTO_INCREMENT for table `student_tbl`
 --
 ALTER TABLE `student_tbl`
-  MODIFY `stdid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `stdid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `transactions_tbl`
