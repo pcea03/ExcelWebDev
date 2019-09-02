@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Feval Online System</title>
-  <link rel="stylesheet" href="css/table.css">
 </head>
 <body>
 

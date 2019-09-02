@@ -1,10 +1,11 @@
 <?php
   session_start();
 
-
+  $stdid = $_SESSION['stdid'];
   $stdFname = $_SESSION['stdFname'];
   $stdLname = $_SESSION['stdLname'];
   $stdEmail = $_SESSION['stdEmail'];
+  $userLvl = $_SESSION['userLvl'];
 ?>
 
 
@@ -28,6 +29,8 @@
         crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/table.css">
+
 
 </head>
 
@@ -47,59 +50,70 @@
       </div>
 
       <div class="sidebar-menu">
-        <ul>
-          <li class="header-menu">
-            <span>General</span>
-          </li>
-          <li>
-            <a href="student.php">
-              <i class="fa fa-users"></i>
-              <span>Students</span>
-            </a>
-          </li>
-          
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-sticky-note"></i>
-              <span>Evaluation</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="listevaluation.php">Evaluation List
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Result
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Reports</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-         
-        </ul>
+
+        <?php if($userLvl == 'student'){ ?>
+          <ul>
+                  <li class="header-menu">
+                    <span>General</span>
+                  </li>
+                  <li>
+                  
+                    <a href="home.php">
+                      <i class="fa fa-home"></i>
+                      <span>Home</span>
+                    </a>
+
+                    <a href="editstudent.php?id=<?php echo $stdid;?>">
+                      <i class="fa fa-cog"></i>
+                      <span>Edit Information</span>
+                    </a>
+                  </li>
+                  
+        <?php }if($userLvl == 'admin'){ ?>
+                <ul>
+                  <li class="header-menu">
+                    <span>General</span>
+                  </li>
+                  <li>
+                  
+                    <a href="student.php">
+                      <i class="fa fa-users"></i>
+                      <span>Students</span>
+                    </a>
+                  </li>
+                  
+                  <li class="sidebar-dropdown">
+                    <a href="#">
+                      <i class="fa fa-sticky-note"></i>
+                      <span>Evaluation</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                      <ul>
+                        <li>
+                          <a href="listevaluation.php">Evaluation List
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Result
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Reports</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+            <?php } ?>
       </div>
+
       <!-- sidebar-menu  -->
     </div>
     <!-- sidebar-content  -->
         <div class="sidebar-footer">
-          <a href="#">
-            <i class="fa fa-bell"></i>
-            <span class="badge badge-pill badge-warning notification">3</span>
-          </a>
-          <a href="#">
-            <i class="fa fa-envelope"></i>
-            <span class="badge badge-pill badge-success notification">7</span>
-          </a>
-          <a href="#">
-            <i class="fa fa-cog"></i>
-            <span class="badge-sonar"></span>
-          </a>
-          <a href="#">
-            <i class="fa fa-power-off"></i>
+
+          <a href="logout.php">
+            <i class="fa fa-undo-alt"></i>
           </a>
         </div>
   </nav>

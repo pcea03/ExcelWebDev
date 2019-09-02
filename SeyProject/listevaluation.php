@@ -1,5 +1,7 @@
 <?php
 require('config/dbconnection.php');
+include('sidebar.php');
+
 
 $query = "SELECT * fROM evaluate_tbl";
 $result = mysqli_query($conn,$query);
@@ -15,9 +17,6 @@ $all = mysqli_fetch_all($result,MYSQLI_ASSOC);
     <title>Document</title>
 </head>
 <body>
-<?php include('sidebar.php');?>
-
-
 
 <main class="page-content">
     <div class="container-fluid">

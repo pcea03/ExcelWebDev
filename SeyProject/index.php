@@ -43,10 +43,12 @@ if(isset($_POST['login'])){
 			$row = mysqli_fetch_object($queryToDB);
 			// print_r($row);
 			if ($count) {
-               
+				
+                $_SESSION["stdid"] = $row->stdid;
                 $_SESSION["stdFname"] = $row->stdFname;
                 $_SESSION["stdLname"] = $row->stdLname;
                 $_SESSION["stdEmail"] = $row->stdEmail;
+                $_SESSION["userLvl"] = $row->userLvl;
                 $_SESSION["stdAdd"] = $row->stdAdd;
 ?>  
                     <script type="text/javascript">

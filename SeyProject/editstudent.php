@@ -18,7 +18,11 @@
       $query = "UPDATE student_tbl set stdFname = '$fname', stdLname='$lname',stdEmail='$email', stdPass='$pass',stdAdd='$add' where stdid ='$stdid'";
 
       if(mysqli_query($conn,$query)){
+        if($userLvl == 'admin'){
           header('location: student.php');
+        }else{
+          header('location: home.php');
+        }
       }else{
           ?>
                 <script>alert('Unable to update user');</script>
