@@ -3,16 +3,16 @@
 	session_start();
 	
 if(isset($_POST['signup'])){
-
     $fname = mysqli_real_escape_string($conn, $_POST['fname']);
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$userlevel = 'student';
 	$pass = mysqli_real_escape_string($conn, $_POST['pass']);
 	$cpass = mysqli_real_escape_string($conn, $_POST['cpass']);
     $add = mysqli_real_escape_string($conn, $_POST['add']);
 	
 	if($pass == $cpass){
-		$query = "INSERT INTO student_tbl(stdFname,stdLname,stdEmail,stdPass,stdAdd) VALUES ('$fname','$lname','$email','$pass','$add')";
+		$query = "INSERT INTO student_tbl(stdFname,stdLname,stdEmail,userLvl,stdPass,stdAdd) VALUES ('$fname','$lname','$email','$userlevel','$pass','$add')";
 		if(mysqli_query($conn,$query))
 		{
 				?>
@@ -72,7 +72,7 @@ if(isset($_POST['login'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Feval Online System</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="css/signin.css" rel="stylesheet">
