@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2019 at 07:01 AM
+-- Generation Time: Sep 02, 2019 at 10:39 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -49,6 +49,7 @@ INSERT INTO `evaluate_tbl` (`evaID`, `evaTitle`, `evaDesc`) VALUES
 --
 
 CREATE TABLE `question_tbl` (
+  `questID` int(11) NOT NULL,
   `evalID` int(11) NOT NULL,
   `questno` varchar(255) NOT NULL,
   `question` varchar(255) NOT NULL
@@ -58,13 +59,13 @@ CREATE TABLE `question_tbl` (
 -- Dumping data for table `question_tbl`
 --
 
-INSERT INTO `question_tbl` (`evalID`, `questno`, `question`) VALUES
-(1, '1', 'Does s/he start his class on time?'),
-(1, '2', 'is s/he well groomed and properly attired'),
-(1, '3', 'does s/he have a clear and audible voice?'),
-(4, '1', 'Are the  and equipment available before s/he starts the class?'),
-(4, '2', 'Are the printed learning materials clear, up-to-date, and well organized?'),
-(4, '3', 'Do you feel adequately prepared to complete the exercises based on the lecture?');
+INSERT INTO `question_tbl` (`questID`, `evalID`, `questno`, `question`) VALUES
+(1, 1, '1', 'Does s/he start his class on time?'),
+(2, 1, '2', 'is s/he well groomed and properly attired'),
+(3, 1, '3', 'does s/he have a clear and audible voice?'),
+(4, 4, '1', 'Are the materials and equipment available before s/he starts the class?'),
+(5, 4, '2', 'Are the printed learning materials clear, up-to-date, and well organized?'),
+(6, 4, '3', 'Do you feel adequately prepared to complete the exercises based on the lecture?');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,8 @@ CREATE TABLE `student_tbl` (
 --
 
 INSERT INTO `student_tbl` (`stdid`, `stdFname`, `stdLname`, `stdEmail`, `userLvl`, `stdPass`, `stdAdd`) VALUES
-(1, 'Psalter Angelo', 'Cea', 'psaltercea@gmail.com', 'admin', '123', 'Pasig City');
+(1, 'Psalter Angelo', 'Cea', 'psaltercea@gmail.com', 'admin', '123', 'Pasig City'),
+(7, 'Neil', 'Chan', 'nchan@gmail.com', 'student', '123', 'Dyan City');
 
 -- --------------------------------------------------------
 
@@ -104,6 +106,18 @@ CREATE TABLE `transactions_tbl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `transactions_tbl`
+--
+
+INSERT INTO `transactions_tbl` (`ansId`, `stdId`, `evaId`, `questNo`, `answer`) VALUES
+(46, 7, 1, 1, 3),
+(47, 7, 1, 2, 4),
+(48, 7, 1, 3, 5),
+(49, 7, 4, 1, 1),
+(50, 7, 4, 2, 2),
+(51, 7, 4, 3, 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -112,6 +126,12 @@ CREATE TABLE `transactions_tbl` (
 --
 ALTER TABLE `evaluate_tbl`
   ADD PRIMARY KEY (`evaID`);
+
+--
+-- Indexes for table `question_tbl`
+--
+ALTER TABLE `question_tbl`
+  ADD PRIMARY KEY (`questID`);
 
 --
 -- Indexes for table `student_tbl`
@@ -136,16 +156,22 @@ ALTER TABLE `evaluate_tbl`
   MODIFY `evaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `question_tbl`
+--
+ALTER TABLE `question_tbl`
+  MODIFY `questID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `student_tbl`
 --
 ALTER TABLE `student_tbl`
-  MODIFY `stdid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `stdid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `transactions_tbl`
 --
 ALTER TABLE `transactions_tbl`
-  MODIFY `ansId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ansId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
