@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2019 at 10:22 AM
+-- Generation Time: Sep 02, 2019 at 07:01 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `evaluate_tbl` (
   `evaID` int(11) NOT NULL,
-  `evaName` varchar(255) NOT NULL,
+  `evaTitle` varchar(255) NOT NULL,
   `evaDesc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,9 +38,9 @@ CREATE TABLE `evaluate_tbl` (
 -- Dumping data for table `evaluate_tbl`
 --
 
-INSERT INTO `evaluate_tbl` (`evaID`, `evaName`, `evaDesc`) VALUES
+INSERT INTO `evaluate_tbl` (`evaID`, `evaTitle`, `evaDesc`) VALUES
 (1, 'Instructor', 'Sir Jonathan'),
-(4, 'Training Center', 'Excel');
+(4, 'Training', 'Web Development');
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,10 @@ CREATE TABLE `question_tbl` (
 INSERT INTO `question_tbl` (`evalID`, `questno`, `question`) VALUES
 (1, '1', 'Does s/he start his class on time?'),
 (1, '2', 'is s/he well groomed and properly attired'),
-(1, '3', 'does s/he have a clear and audible voice?');
+(1, '3', 'does s/he have a clear and audible voice?'),
+(4, '1', 'Are the  and equipment available before s/he starts the class?'),
+(4, '2', 'Are the printed learning materials clear, up-to-date, and well organized?'),
+(4, '3', 'Do you feel adequately prepared to complete the exercises based on the lecture?');
 
 -- --------------------------------------------------------
 
@@ -74,6 +77,7 @@ CREATE TABLE `student_tbl` (
   `stdFname` varchar(255) NOT NULL,
   `stdLname` varchar(255) NOT NULL,
   `stdEmail` varchar(255) NOT NULL,
+  `userLvl` varchar(255) NOT NULL,
   `stdPass` varchar(255) NOT NULL,
   `stdAdd` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -82,11 +86,8 @@ CREATE TABLE `student_tbl` (
 -- Dumping data for table `student_tbl`
 --
 
-INSERT INTO `student_tbl` (`stdid`, `stdFname`, `stdLname`, `stdEmail`, `stdPass`, `stdAdd`) VALUES
-(1, 'Psalter Angelo', 'Cea', 'psaltercea@gmail.com', '123', 'Pasig City'),
-(2, 'Neil', 'Chan', 'nchan@gmail.com', '1234', 'Paraniaque'),
-(3, 'Jan Maurice', 'Mateo', 'jmmateo@gmail.com', '12345', 'Marikina'),
-(4, 'Jomer', 'Carlo', 'jcarlo@gmail.com', '123456', 'Cainta');
+INSERT INTO `student_tbl` (`stdid`, `stdFname`, `stdLname`, `stdEmail`, `userLvl`, `stdPass`, `stdAdd`) VALUES
+(1, 'Psalter Angelo', 'Cea', 'psaltercea@gmail.com', 'admin', '123', 'Pasig City');
 
 -- --------------------------------------------------------
 
@@ -101,18 +102,6 @@ CREATE TABLE `transactions_tbl` (
   `questNo` int(11) NOT NULL,
   `answer` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `transactions_tbl`
---
-
-INSERT INTO `transactions_tbl` (`ansId`, `stdId`, `evaId`, `questNo`, `answer`) VALUES
-(1, 1, 1, 1, 5),
-(2, 1, 1, 2, 5),
-(3, 1, 1, 3, 3),
-(4, 2, 1, 1, 3),
-(5, 2, 1, 2, 5),
-(6, 2, 1, 3, 4);
 
 --
 -- Indexes for dumped tables
@@ -150,7 +139,7 @@ ALTER TABLE `evaluate_tbl`
 -- AUTO_INCREMENT for table `student_tbl`
 --
 ALTER TABLE `student_tbl`
-  MODIFY `stdid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `stdid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transactions_tbl`
