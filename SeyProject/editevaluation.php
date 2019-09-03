@@ -9,17 +9,23 @@ $question = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 // $e = mysqli_fetch_array($result);
 // print_r($question);
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+$result = $conn->query("SELECT COUNT(*) FROM question_tbl WHERE question_tbl.evalID =".$id);
+$row = $result->fetch_row();
+$holdhighsccore = $row[0];
 
-</head>
-<body>
+$queryadd = "UPDATE evaluate_tbl set highscore = '$holdhighsccore'";
+$resultadd = mysqli_query($conn,$queryadd);
+
+if(isset($_POST['save'])){
+  $holdno = mysqli_real_escape_string($conn, $_POST['questno']);
+  $holdquest = mysqli_real_escape_string($conn, $_POST['question']);
+  $queryquest = "INSERT INTO question_tbl(evalID,questno,question) VALUES ('$id','$holdno','$holdquest')";
+  
+      if(mysqli_query($conn,$queryquest)){
+          header("location:editevaluation.php?id=$id");
+      }
+}
+?>
 
 <main class="page-content">
     <div class="container-fluid">
@@ -41,7 +47,7 @@ $question = mysqli_fetch_all($result,MYSQLI_ASSOC);
         			<tr>
         				<th class="numeric">Question No.</th>
         				<th class="numeric">Question</th>
-                <th class="numeric">Action</th>
+                <!-- <th class="numeric">Action</th> -->
         			</tr>
         		</thead>
         		<tbody>
@@ -49,10 +55,19 @@ $question = mysqli_fetch_all($result,MYSQLI_ASSOC);
             <tr>
         				<td data-title="Desecription"><?php echo  $eval['questno'];?></td>
         				<td data-title="Desecription"><?php echo  $eval['question'];?></td>
-        				<td data-title="Action" class="numeric"><a href="editevaluation.php?id=<?php echo $eval['evaID']; ?>" class="btn btn-secondary">Edit</a></td>
+        				<!-- <td data-title="Action" class="numeric"><a href="editquestion.php?id=<?php echo $id;?>" class="btn btn-secondary">Edit</a></td> -->
                 </td>
-        			</tr>
-            <?php endforeach;?>
+                <?php endforeach;?>
+        		</tr>
+            <tr>
+            <form action="editevaluation.php?id=<?php echo $id;?>" method="POST">
+                <td data-title="Desecription"><input type="text" name="questno" value="<?php echo $eval['questno'] +1?>" class="form-control text-center"></td>
+        				<td data-title="Desecription"><input type="text" name="question" class="form-control text-center" ></td>
+        				<button class="btn btn-primary"name="save">Save Question</button>
+                </td>
+            </form>
+            </tr>
+
         		</tbody>
         	</table>
         </div>
@@ -60,6 +75,3 @@ $question = mysqli_fetch_all($result,MYSQLI_ASSOC);
   </main>
 
 </div>
-    
-</body>
-</html>

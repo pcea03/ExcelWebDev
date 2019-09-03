@@ -94,11 +94,8 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#">Result
+                          <a href="results.php">Result
                           </a>
-                        </li>
-                        <li>
-                          <a href="#">Reports</a>
                         </li>
                       </ul>
                     </div>

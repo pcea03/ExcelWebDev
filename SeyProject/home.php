@@ -8,15 +8,6 @@
   $eval = mysqli_fetch_all($result,MYSQLI_ASSOC);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
 
 
 
@@ -26,12 +17,10 @@
       <hr>
       <div class="row">
         <div class="form-group col-md-12">
-          <p>This is a responsive sidebar template with dropdown menu based on bootstrap 4 framework.</p>
-          <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-              Github</a>, it contains more themes and background image option</p>
+
         </div>
       </div>
-      <h5>More templates</h5>
+      <h5>List of Evaluation</h5>
       <hr>
           <div class="row">
           <?php foreach($eval as $evals){ ?>
@@ -52,5 +41,3 @@
 
 </div>
   
-</body>
-</html>
