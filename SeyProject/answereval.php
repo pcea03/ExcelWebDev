@@ -50,15 +50,15 @@
       <hr>
 
       <div id="no-more-tables">
-            <table class="col-md-12 table-striped cf text-center">
+            <table class="table col-md-12 cf text-center">
         		<thead class="cf">
         			<tr>
-        				<th class="numeric" width ="20%">Question</th>
-        				<th class="numeric">1</th>
-        				<th class="numeric">2</th>
-        				<th class="numeric">3</th>
-        				<th class="numeric">4</th>
-        				<th class="numeric">5</th>
+        				<th class="" width ="20%">Question</th>
+        				<th class=" text-center">1</th>
+        				<th class="">2</th>
+        				<th class="">3</th>
+        				<th class="">4</th>
+        				<th class="">5</th>
 
         			</tr>
         		</thead>
@@ -73,7 +73,6 @@
                                 <td data-title="4"><input class="form-check-input" type="radio" name="<?php echo $question['questno']?>" id="exampleRadios1" value="4" ></td>
                                 <td data-title="5"><input class="form-check-input" type="radio" name="<?php echo $question['questno']?>" id="exampleRadios1" value="5" ></td>
                             </tr>
-                            
                         <?php endforeach;?>
         		</tbody>
         	</table>

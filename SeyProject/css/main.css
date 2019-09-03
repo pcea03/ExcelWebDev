@@ -349,20 +349,24 @@
   }
   
   /*--------------------------page-content-----------------------------*/
-  
+
   .page-wrapper .page-content {
     display: inline-block;
     width: 100%;
     padding-left: 0px;
     padding-top: 20px;
+    background-image: url("../excellogo/logo2.jpg");
+
   }
   
   .page-wrapper .page-content > div {
     padding: 20px 40px;
+    
   }
   
   .page-wrapper .page-content {
     overflow-x: hidden;
+    
   }
   
   /*------scroll bar---------------------*/

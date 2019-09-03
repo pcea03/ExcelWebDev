@@ -56,7 +56,7 @@
                             }elseif ($holdpercent >= 77) {
                                 $equivalent = "Satisfactory";
                             }else{
-                                $equivalent = "Failed";
+                                $equivalent = "Dissaticfactory";
                             }
                         ?>
         				<td><?php echo $holdno;?></td>
