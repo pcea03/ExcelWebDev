@@ -11,15 +11,17 @@ $question = mysqli_fetch_all($result,MYSQLI_ASSOC);
 // print_r($question);
 $result = $conn->query("SELECT COUNT(*) FROM question_tbl WHERE question_tbl.evalID =".$id);
 $row = $result->fetch_row();
-$holdhighsccore = $row[0];
+$holdhighscore = $row[0];
 
-$queryadd = "UPDATE evaluate_tbl set highscore = '$holdhighsccore'";
+$queryadd = "UPDATE evaluate_tbl set totalq = '$holdhighscore' WHERE evaID = ".$id;
 $resultadd = mysqli_query($conn,$queryadd);
 
 if(isset($_POST['save'])){
   $holdno = mysqli_real_escape_string($conn, $_POST['questno']);
   $holdquest = mysqli_real_escape_string($conn, $_POST['question']);
   $queryquest = "INSERT INTO question_tbl(evalID,questno,question) VALUES ('$id','$holdno','$holdquest')";
+
+
   
       if(mysqli_query($conn,$queryquest)){
           header("location:editevaluation.php?id=$id");
