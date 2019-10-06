@@ -1,8 +1,6 @@
 <?php
   require('config/dbconnection.php');
   include('sidebar.php');
-  
-
   $query = "SELECT * FROM evaluate_tbl";
   $result = mysqli_query($conn,$query);
   $eval = mysqli_fetch_all($result,MYSQLI_ASSOC);
@@ -39,5 +37,5 @@
 
   </main>
 
-</div>
+
   
